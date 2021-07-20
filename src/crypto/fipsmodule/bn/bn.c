@@ -226,6 +226,8 @@ unsigned BN_num_bits_word(BN_ULONG l) {
 }
 
 unsigned BN_num_bits(const BIGNUM *bn) {
+  if(bn ==NULL)
+    return 0;
   const int max = bn->top - 1;
 
   if (BN_is_zero(bn)) {
